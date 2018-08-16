@@ -77,20 +77,21 @@ for item in listOfUrls:
         print(err)
 
 
+
 ## Time comparision
+print('\n')
 created_at = json_data.get('created_at')
 updated_at = json_data.get('updated_at')
 # Convert time format
 created = time.strptime(created_at, '%Y-%m-%dT%H:%M:%SZ')
 updated = time.strptime(updated_at, '%Y-%m-%dT%H:%M:%SZ')
-print("Created: " + str(created))
+print("Created: " + str(created_at))
 print('\n')
-print("Updated: " + str(updated))
+print("Updated: " + str(updated_at))
 print('\n')
 created = time.mktime(created)
 updated = time.mktime(updated)
 
-print('\n')
 if(updated-created) > 0:
     print("The updated time is greater than the created time")
 
